@@ -1,8 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { TbSchool } from "react-icons/tb";
 import { MdOutlineClose } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 function LOGIN_POPUP({ setPopup }) {
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordText, setPasswordText] = useState(false);
   return (
     <div className="flex flex-col justify-center items-center fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm">
       <div className="flex flex-col gap-[10px]">
@@ -10,7 +15,7 @@ function LOGIN_POPUP({ setPopup }) {
           className="h-[40px] w-[40px] ml-auto hover:cursor-pointer"
           onClick={() => setPopup(false)}
         />
-        <div className="flex flex-col gap-[20px] justify-center items-center w-[1000px] h-[1050px] bg-[#ffffff] rounded-[10px]">
+        <div className="flex flex-col gap-[20px] justify-center items-center w-[1000px] h-[1050px] bg-[#ffffff] rounded-[20px]">
           <img
             src="/assets/SU.png"
             alt="su"
@@ -43,13 +48,34 @@ function LOGIN_POPUP({ setPopup }) {
               <p className="text-[25px]">
                 PASSWORD <span className="text-red-500">*</span>
               </p>
-              <input
-                type="password"
-                placeholder="Enter Passowrd"
-                className="border-[0.5px] border-[#d0d0d0] rounded-[10px] px-[30px] py-[12px] w-[600px] text-[25px] outline-none"
-              />
+              <div className="flex flex-row  items-center w-[600px] border-[0.5px] border-[#d0d0d0] rounded-[10px]">
+                <input
+                  type={passwordText ? "text" : "password"}
+                  placeholder="Enter Passowrd"
+                  className="border-r-[0.5px] rounded-l-[10px] border-[#d0d0d0] px-[30px] py-[12px] w-[500px] text-[25px] outline-none"
+                />
+                {showPassword ? (
+                  <FaRegEye
+                    className="w-[30px] h-[30px] ml-[30px]"
+                    onClick={() => {
+                      setPasswordText(false);
+                      setShowPassword(false);
+                    }}
+                  />
+                ) : (
+                  <FaRegEyeSlash
+                    className="w-[34px] h-[34px] ml-[28px]"
+                    onClick={() => {
+                      setPasswordText(true);
+                      setShowPassword(true);
+                    }}
+                  />
+                )}
+              </div>
             </div>
-            <button className="mx-[5px] my-[5px] px-[60px] py-[12px] bg-[#4d4d4d] text-white rounded-[5px] font-bold text-[30px]">Login</button>
+            <button className="mx-[5px] my-[5px] px-[60px] py-[12px] bg-[#4d4d4d] text-white rounded-[5px] font-bold text-[30px]">
+              Login
+            </button>
           </div>
         </div>
       </div>

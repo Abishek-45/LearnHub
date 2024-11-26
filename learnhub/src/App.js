@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import LOGIN_POPUP from "./components/login_popup_card";
 import REGISTER_POPUP from "./components/register_popup_card";
