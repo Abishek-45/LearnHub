@@ -15,15 +15,15 @@ function LOGIN_POPUP({ setPopup }) {
           className="h-[18px] w-[18px] ml-auto hover:cursor-pointer"
           onClick={() => setPopup(false)}
         />
-        <div className="flex flex-col gap-[10px] justify-center items-center w-[600px] h-[525px] bg-[#ffffff] rounded-[10px]">
+        <div className="flex flex-col gap-[10px] justify-center items-center w-[550px] h-[525px] bg-[#ffffff] rounded-[10px]">
           <img
             src="/assets/SU.png"
             alt="su"
             className="h-[60px] rounded-[65px] "
           />
           <div className="flex flex-col justify-center items-center">
-            <TbSchool className="h-[25px] w-[25px] relative top-[8px] right-[35px] -rotate-[25deg]" />
-            <p className="font-sans font-extrabold text-[#ED8B00] text-[25px]">
+            <TbSchool className="h-[25px] w-[25px] relative top-[12px] right-[35px] -rotate-[25deg]" />
+            <p className="font-sans font-extrabold text-[#ED8B00] text-[24px]">
               Login
             </p>
           </div>
@@ -33,30 +33,30 @@ function LOGIN_POPUP({ setPopup }) {
             </p>
             <p className="text-[#ED8B00] text-[15px]">CreateAccount</p>
           </div>
-          <div className="flex flex-col w-[500px] h-[100px] bg-[#ffffff] my-[10px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[120px] gap-[20px] justify-center items-center">
+          <div className="flex flex-col w-[450px] h-[100px] bg-[#ffffff] my-[10px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[130px] gap-[20px] justify-center items-center">
             <div className="flex flex-col gap-[10px]">
-              <p className="text-[12px]">
+              <p className="text-[13px]">
                 USER ID / ROLL NO <span className="text-red-500">*</span>
               </p>
               <input
                 type="text"
                 placeholder="Enter Roll No"
-                className="border-[0.5px] border-[#d0d0d0] rounded-[5px] px-[10px] py-[6px] w-[350px] text-[12px] outline-none"
+                className="border-[0.5px] border-[#d0d0d0] rounded-[5px] px-[10px] py-[6px] w-[350px] text-[13px] outline-none"
               />
             </div>
             <div className="flex flex-col gap-[10px]">
-              <p className="text-[12px]">
+              <p className="text-[13px]">
                 PASSWORD <span className="text-red-500">*</span>
               </p>
               <div className="flex flex-row  items-center w-[350px] border-[0.5px] border-[#d0d0d0] rounded-[5px] py-[2px]">
                 <input
                   type={passwordText ? "text" : "password"}
                   placeholder="Enter Passowrd"
-                  className="border-r-[0.5px] rounded-l-[5px] border-[#d0d0d0] px-[10px] py-[6px] w-[300px] text-[12px] outline-none"
+                  className="border-r-[0.5px] rounded-l-[5px] border-[#d0d0d0] px-[10px] py-[6px] w-[280px] text-[13px] outline-none"
                 />
                 {showPassword ? (
                   <FaRegEye
-                    className="w-[15px] h-[15px] ml-[15px] hover:cursor-pointer"
+                    className="w-[18px] h-[18px] ml-[20px] hover:cursor-pointer"
                     onClick={() => {
                       setPasswordText(false);
                       setShowPassword(false);
@@ -64,7 +64,7 @@ function LOGIN_POPUP({ setPopup }) {
                   />
                 ) : (
                   <FaRegEyeSlash
-                    className="w-[15px] h-[15px] ml-[14px] hover: cursor-pointer"
+                    className="w-[18px] h-[18px] ml-[21px] hover: cursor-pointer"
                     onClick={() => {
                       setPasswordText(true);
                       setShowPassword(true);
