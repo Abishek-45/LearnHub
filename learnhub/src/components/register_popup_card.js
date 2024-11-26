@@ -14,7 +14,7 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
         className="h-[18px] w-[18px] ml-auto hover:cursor-pointer"
         onClick={() => setPopup(false)}
       />
-      <div className="flex flex-col gap-[5px] justify-center items-center w-[550px] h-[80ev] bg-[#ffffff] rounded-[10px] py-[2%]">
+      <div className="flex flex-col gap-[5px] justify-center items-center w-[550px] h-[80ev] bg-[#ffffff] rounded-[10px] py-[3%]">
         <img
           src="/assets/SU.png"
           alt="su"
@@ -26,7 +26,7 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
             Register
           </p>
         </div>
-        <div className="flex flex-col w-[450px] h-[400px] bg-[#ffffff] my-[5px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[130px] gap-[20px] justify-center items-center">
+        <div className="flex flex-col w-[450px] h-[380px] bg-[#ffffff] my-[5px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[5px] gap-[12px] justify-center items-center">
           <div className="flex flex-col gap-[10px]">
             <p className="text-[13px]">
               Name <span className="text-red-500">*</span>
@@ -86,7 +86,7 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
               )}
             </div>
           </div>
-          <button className="mx-[2.5px] my-[2.5px] px-[30px] py-[6px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
+          <button className="mx-[2.5px] my-[1px] px-[30px] py-[6px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
             Register
           </button>
         </div>
