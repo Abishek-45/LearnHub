@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center">
       <button
-        className="mx-[5px] my-[5px] px-[15px] py-[8px] bg-[#4d4d4d] text-white rounded-[3px] font-bold text-[35px]"
+        className="mx-[5px] my-[5px] px-[15px] py-[8px] bg-[#4d4d4d] text-white rounded-[3px] font-bold text-[15px]"
         onClick={handlePopup}
       >
         Login
