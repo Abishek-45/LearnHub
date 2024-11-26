@@ -1,9 +1,9 @@
 import React from 'react'
 
-function login_card() {
+function REGISTER_POPUP() {
   return (
     <div></div>
   )
 }
 
-export default login_card
+export default REGISTER_POPUP
