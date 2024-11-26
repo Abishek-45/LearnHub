@@ -29,7 +29,7 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
         <div className="flex flex-col w-[450px] h-[380px] bg-[#ffffff] my-[5px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[5px] gap-[12px] justify-center items-center">
           <div className="flex flex-col gap-[10px]">
             <p className="text-[13px]">
-              Name <span className="text-red-500">*</span>
+              NAME <span className="text-red-500">*</span>
             </p>
             <input
               type="text"
