@@ -9,24 +9,24 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
   const [passwordText, setPasswordText] = useState(false);
 
   return (
-    <div className="flex flex-col gap-[10px] ">
+    <div className="flex flex-col gap-[5px]">
       <MdOutlineClose
-        className="h-[20px] w-[20px] ml-auto hover:cursor-pointer"
+        className="h-[18px] w-[18px] ml-auto hover:cursor-pointer"
         onClick={() => setPopup(false)}
       />
-      <div className="flex flex-col gap-[10px] justify-center items-center w-[550px] h-[590px] bg-[#ffffff] rounded-[10px]">
+      <div className="flex flex-col gap-[5px] justify-center items-center w-[550px] h-[80ev] bg-[#ffffff] rounded-[10px] py-[2%]">
         <img
           src="/assets/SU.png"
           alt="su"
           className="h-[60px] rounded-[65px] "
         />
         <div className="flex flex-col justify-center items-center">
-          <TbSchool className="h-[25px] w-[25px] relative top-[12px] right-[45px] -rotate-[25deg]"/>
+          <TbSchool className="h-[25px] w-[25px] relative top-[12px] right-[45px] -rotate-[25deg]" />
           <p className="font-sans font-extrabold text-[#ED8B00] text-[24px]">
             Register
           </p>
         </div>
-        <div className="flex flex-col w-[450px] h-[400px] bg-[#ffffff] my-[10px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[130px] gap-[20px] justify-center items-center">
+        <div className="flex flex-col w-[450px] h-[400px] bg-[#ffffff] my-[5px] rounded-[7.5px] border-[0.5px] border-[#d0d0d0] py-[130px] gap-[20px] justify-center items-center">
           <div className="flex flex-col gap-[10px]">
             <p className="text-[13px]">
               Name <span className="text-red-500">*</span>
