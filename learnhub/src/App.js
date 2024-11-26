@@ -2,12 +2,20 @@ import { useState } from "react";
 import "./App.css";
 import LOGIN_POPUP from "./components/login_popup_card";
 import REGISTER_POPUP from "./components/register_popup_card";
+
 function App() {
   const [popup, setPopup] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
 
   const handlePopup = () => {
     setPopup(true);
   };
+
+  const handleClosePopup = () => {
+    setPopup(false);
+    setIsRegister(false); // Reset isRegister when the popup is closed
+  };
+
   return (
     <div className="flex flex-col w-full h-screen">
       <button
@@ -16,7 +24,13 @@ function App() {
       >
         Login
       </button>
-      {popup && <LOGIN_POPUP setPopup={setPopup} />}
+      {popup && (
+        <div className="flex flex-col justify-center items-center fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm">
+          {isRegister ? 
+            <REGISTER_POPUP setIsRegister={setIsRegister} setPopup={handleClosePopup} /> : 
+            <LOGIN_POPUP setIsRegister={setIsRegister} setPopup={handleClosePopup} />}
+        </div>
+      )}
     </div>
   );
 }
