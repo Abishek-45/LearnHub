@@ -1,3 +1,4 @@
+const connection = require("./Db_Connection");
 const express = require("express");
 const cors = require("cors");
 
@@ -5,10 +6,15 @@ const app = express();
 app.use(cors);
 app.use(express.json());
 
-app.listen(3001, (err) => {
-  if (err) {
+async function Run_Server() {
+  try {
+    await connection();
+    app.listen(3001, async (err) => {
+      console.log({ LOG: "server running at port 3001" });
+    });
+  } catch (err) {
     console.log({ ERR: "server failed" });
-  } else {
-    console.log({ LOG: "server running at port 3001" });
   }
-});
+}
+
+Run_Server();
