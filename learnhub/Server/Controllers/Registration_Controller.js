@@ -2,6 +2,7 @@ const User = require("../Schema/User_Credentials");
 const mail_transport = require("../Utilities/Mailer");
 const otpGenerator = require("otp-generator");
 const path = require("path");
+const fs = require("fs");
 
 const Register = {
   user_registration: async (req, res) => {
@@ -30,12 +31,18 @@ const Register = {
           Password,
           otp: parseInt(otp, 10),
         };
-        const html_file = path.join(__dirname);
+
+        const htmlTemplate = fs.readFileSync(
+          path.join(__dirname, "..", "Templates", "Mail_Template.html"),
+          "utf-8"
+        );
+        const personalizedHtml = htmlTemplate.replace("${otp}", otp);
+
         const info = await mail_transport.sendMail({
           from: "no_reply_LearnHub@gmail.com",
           to: email,
           subject: "OTP Verification",
-          html: html_file,
+          html: personalizedHtml,
         });
         console.log("Message sent: " + info.messageId);
         console.log(otp);
