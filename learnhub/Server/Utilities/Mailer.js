@@ -1,5 +1,6 @@
 const mail = require("nodemailer");
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config();
+
 var transport = mail.createTransport({
   service: "Gmail",
   auth: {
@@ -8,5 +9,4 @@ var transport = mail.createTransport({
   },
 });
 
-console.log(process.env.USER);
 module.exports = transport;
