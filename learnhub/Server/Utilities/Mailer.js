@@ -8,6 +8,6 @@ var transport = mail.createTransport({
     pass: process.env.PASS,
   },
 });
-console.log(process.env.USER);
+
 
 module.exports = transport;
