@@ -10,6 +10,12 @@ const Register = {
     try {
       const users = await User.findOne({ rollno });
       const names = await User.findOne({ name });
+      if (users && names) {
+        return res.status(400).json({
+          rollno: "rollno has been taken",
+          name: "name has been taken",
+        });
+      }
       if (users) {
         return res
           .status(400)
