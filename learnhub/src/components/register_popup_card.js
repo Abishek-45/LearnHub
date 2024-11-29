@@ -32,15 +32,18 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
     const body = {
       name: name,
       rollno: rollno,
-      mail: mail,
-      Password: password,
+      email: mail,
+      password: password,
     };
 
-    try{
-      const res = await axios.post(ur,body)
-    }
-    catch(err){
-      console.log(err)
+    try {
+      const res = await axios.post(
+        "http://localhost:3001/Authentication/Register",
+        body
+      );
+      console.log(res);
+    } catch (err) {
+      console.log(err);
     }
   };
 
