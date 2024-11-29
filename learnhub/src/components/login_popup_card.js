@@ -3,11 +3,38 @@ import { useState } from "react";
 import { TbSchool } from "react-icons/tb";
 import { MdOutlineClose } from "react-icons/md";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import axios from "axios";
 
 function LOGIN_POPUP({ setPopup, setIsRegister }) {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordText, setPasswordText] = useState(false);
-  
+
+  const [rollno,setRollno]=useState("");
+  const [Password,setPassword]=useState("");
+
+  const handleRollno =(e) =>{
+    setRollno(e.target.value) ;
+  }
+
+  const handlePassword=(e)=>{
+    setPassword(e.target.value) ;
+  }
+
+  const handleLogin = async () => {
+    const body = {
+      rollno: rollno,
+      Password: Password,
+    };
+    try {
+      const res = await axios.post(
+        "http://localhost:3001/Authentication/login",
+        body
+      );
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="flex flex-col gap-[10px]">
       <MdOutlineClose
@@ -45,6 +72,8 @@ function LOGIN_POPUP({ setPopup, setIsRegister }) {
             <input
               type="text"
               placeholder="Enter Roll No"
+              onChange={handleRollno}
+              value={rollno}
               className="border-[0.5px] border-[#d0d0d0] rounded-[5px] px-[10px] py-[6px] w-[350px] text-[13px] outline-none focus:border-[#ED8B00] focus:ring-2 focus:ring-[#ED8B00]"
             />
           </div>
@@ -56,6 +85,8 @@ function LOGIN_POPUP({ setPopup, setIsRegister }) {
               <input
                 type={passwordText ? "text" : "password"}
                 placeholder="Enter Password"
+               onChange={handlePassword}
+               value={Password}
                 className="border-r-[0.5px] rounded-l-[5px] border-[#d0d0d0] px-[10px] py-[6px] w-[280px] text-[13px] outline-none focus:border-[#ED8B00] focus:ring-2 focus:ring-[#ED8B00]"
               />
               {showPassword ? (
@@ -77,7 +108,9 @@ function LOGIN_POPUP({ setPopup, setIsRegister }) {
               )}
             </div>
           </div>
-          <button className="mx-[2.5px] my-[2.5px] px-[30px] py-[6px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
+          <button 
+           onClick={handleLogin}
+            className="mx-[2.5px] my-[2.5px] px-[30px] py-[6px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
             Login
           </button>
         </div>

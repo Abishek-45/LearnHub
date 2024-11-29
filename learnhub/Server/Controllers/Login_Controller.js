@@ -8,7 +8,7 @@ const login = {
     try {
       const user = await User.findOne({ rollno });
       if (!user) {
-        return response.status(404).send("User does no exist");
+        return response.status(400).send("User does no exist");
       }
 
       if (user.Password !== Password) {
