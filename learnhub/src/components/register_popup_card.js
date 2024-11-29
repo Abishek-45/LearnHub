@@ -33,7 +33,7 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
       name: name,
       rollno: rollno,
       email: mail,
-      password: password,
+      Password: password,
     };
 
     try {
