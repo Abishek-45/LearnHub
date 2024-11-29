@@ -14,16 +14,21 @@ const Register = {
         return res.status(400).json({
           rollno: "rollno has been taken",
           name: "name has been taken",
+          otp: "",
         });
       }
       if (users) {
-        return res
-          .status(400)
-          .json({ message: "This rollno has already been registered" });
+        return res.status(400).json({
+          rollno: "rollno has been taken",
+          name: "",
+          otp: "",
+        });
       } else if (names) {
-        return res
-          .status(400)
-          .json({ message: "The name has already been taked" });
+        return res.status(400).json({
+          name: "name has been taken",
+          rollno: "",
+          otp: "",
+        });
       } else {
         const otp = otpGenerator.generate(4, {
           upperCaseAlphabets: false,
