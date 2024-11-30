@@ -6,7 +6,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import axios from "axios";
 
-function REGISTER_POPUP({ setPopup, setIsRegister }) {
+function REGISTER_POPUP({ setPopup, setIsotp, setIsRegister }) {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordText, setPasswordText] = useState(false);
   const [otpstatus, setOtpstatus] = useState(false);
@@ -36,7 +36,6 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
   };
 
   const handleRegister = async () => {
-
     setNameerr("");
     setOtpmsg("");
     setRollnoerr("");
@@ -59,6 +58,8 @@ function REGISTER_POPUP({ setPopup, setIsRegister }) {
       if (res.data.message === "OTP sent ") {
         setOtpmsg(res.data.message);
         setOtpstatus(true);
+        setIsotp(true);
+        setIsRegister(false);
       }
     } catch (err) {
       console.log(err.response);
