@@ -1,12 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TbSchool } from "react-icons/tb";
 import { MdOutlineClose } from "react-icons/md";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import axios from "axios";
 
-function REGISTER_POPUP({ setPopup, setIsotp, setIsRegister }) {
+function REGISTER_POPUP({
+  setPopup,
+  setIsotp,
+  setIsRegister,
+  resend,
+  setResend,
+}) {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordText, setPasswordText] = useState(false);
   const [otpstatus, setOtpstatus] = useState(false);
@@ -34,6 +40,13 @@ function REGISTER_POPUP({ setPopup, setIsotp, setIsRegister }) {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  useEffect(() => {
+    if (resend) {
+      handleRegister();
+      setResend(false);
+    }
+  }, [resend, setResend]);
 
   const handleRegister = async () => {
     setNameerr("");

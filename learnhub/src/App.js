@@ -9,7 +9,8 @@ function App() {
   const [isRegister, setIsRegister] = useState(false);
   const [isLogin, setIslogin] = useState(false);
   const [isOtp, setIsotp] = useState(false);
-
+  const [resend, setResend] = useState(false);
+  
   const handlePopup = () => {
     setPopup(true);
     setIslogin(true);
@@ -37,6 +38,8 @@ function App() {
               setIsotp={setIsotp}
               setIsRegister={setIsRegister}
               setPopup={setPopup}
+              resend={resend}
+              setResend={setResend}
             />
           )}
           {isLogin && (
@@ -51,6 +54,8 @@ function App() {
               setIsotp={setIsotp}
               setIsRegister={setIsRegister}
               setPopup={setPopup}
+              resend={resend}
+              setResend={setResend}
             />
           )}
         </div>
