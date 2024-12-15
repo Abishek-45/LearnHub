@@ -16,6 +16,8 @@ function App() {
   const handlePopup = () => {
     setPopup(true);
     setIslogin(true);
+    setIsRegister(false);
+    setIsotp(false);
   };
 
   const handleClosePopup = () => {

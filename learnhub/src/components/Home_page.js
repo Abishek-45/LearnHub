@@ -32,6 +32,19 @@ function Home({ handlePopup }) {
   const [bookMark, setBookmark] = useState(false);
   const scrollcontainer = useRef();
 
+  const handlenewpreference = (e) => {
+    setNewpreference(e.target.value);
+  };
+
+  const handleAddpreference = () => {
+    setPreferences([...preferences, newpreference]);
+  };
+
+  const handleDeletepreference = (pref) => {
+    setPreferences((preferences) =>
+      preferences.filter((items) => items != pref)
+    );
+  };
   const handlebookmark = () => {
     setBookmark(!bookMark);
   };
@@ -78,7 +91,10 @@ function Home({ handlePopup }) {
           </div>
 
           <div className="flex flex-row gap-[1.5rem] px-[0.75rem] py-[0.75rem] gap-[0.90rem] justify-center items-center h-[100%] w-[18%]">
-            <button className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
+            <button
+              onClick={handlePopup}
+              className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]"
+            >
               Login
             </button>
             <img
@@ -151,7 +167,10 @@ function Home({ handlePopup }) {
                       className="w-[40%] h-[32%] mx-[0.25rem] justify-center items-center flex flex-row gap-[0.7rem] bg-[#e1e1e1] rounded-[5px]"
                     >
                       <p className="text-[13px]">{pref}</p>
-                      <MdOutlineCancel className="cursor-pointer" />
+                      <MdOutlineCancel
+                        className="cursor-pointer"
+                        onClick={() => handleDeletepreference(pref)}
+                      />
                     </div>
                   ))}
                 </div>
@@ -160,9 +179,19 @@ function Home({ handlePopup }) {
                   className="cursor-pointer h-[0.8rem]"
                 />
               </div>
-              <button className="mx-[2.5px] my-[2.5px] px-[30px] py-[0.3rem] bg-[#333333] border-[0.5px] text-white rounded-[1rem] font-medium text-[13px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]">
-                Add preference
-              </button>
+              <div className="w-[100%] h-full">
+                <input
+                  type="text"
+                  value={newpreference}
+                  onChange={handlenewpreference}
+                />
+                <button
+                  onClick={handleAddpreference}
+                  className="mx-[2.5px] my-[2.5px] px-[30px] py-[0.3rem] bg-[#333333] border-[0.5px] text-white rounded-[1rem] font-medium text-[13px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]"
+                >
+                  Add preference
+                </button>
+              </div>
             </div>
             <div className="flex flex-col h-[24%] w-[100%] bg-[#333333] justify-center items-center">
               <button
