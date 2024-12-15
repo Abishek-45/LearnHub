@@ -27,6 +27,7 @@ function Home({ handlePopup }) {
     "CCE",
     "ABC",
     "CDE",
+    "asdsadf",
   ]);
   const [newpreference, setNewpreference] = useState("");
   const [bookMark, setBookmark] = useState(false);
@@ -51,7 +52,7 @@ function Home({ handlePopup }) {
   const handleLeftscroll = () => {
     if (scrollcontainer.current) {
       scrollcontainer.current.scrollBy({
-        left: -70,
+        left: -100,
         behavior: "smooth",
       });
     }
@@ -150,7 +151,7 @@ function Home({ handlePopup }) {
             </div>
             <hr className="w-[70%] border-t-1 border-gray-300" />
 
-            <div className="flex flex-col h-[42%] w-[100%] justify-center items-center gap-[1rem]">
+            <div className="flex flex-col h-[42%] w-[100%] justify-center items-center gap-[0.5rem] mt-[1rem]">
               <p className="text-[14px]">Preferences</p>
               <div className="flex flex-row h-[35%] w-[90%] justify-center items-center gap-[0.5rem]">
                 <FaAngleLeft
@@ -159,12 +160,12 @@ function Home({ handlePopup }) {
                 />
                 <div
                   ref={scrollcontainer}
-                  className="h-[100%] w-[100%] flex flex-col justify-center itmes-center gap-[0.6rem] flex-wrap overflow-x-auto scrollbar-none "
+                  className="h-[100%] w-[70%] flex flex-row whitespace-nowrap justify-center items-center gap-[0.6rem]  overflow-x-auto scrollbar-none "
                 >
                   {preferences.map((pref, index) => (
                     <div
                       key={index}
-                      className="w-[40%] h-[32%] mx-[0.25rem] justify-center items-center flex flex-row gap-[0.7rem] bg-[#e1e1e1] rounded-[5px]"
+                      className="w-auto h-[50%]  px-[0.5rem] justify-center items-center flex flex-row gap-[0.7rem] bg-[#e1e1e1] rounded-[5px]"
                     >
                       <p className="text-[13px]">{pref}</p>
                       <MdOutlineCancel
@@ -179,7 +180,7 @@ function Home({ handlePopup }) {
                   className="cursor-pointer h-[0.8rem]"
                 />
               </div>
-              <div className="w-[100%] h-full">
+              <div className="w-[100%] h-full flex flex-col justify-center items-center">
                 <input
                   type="text"
                   value={newpreference}
