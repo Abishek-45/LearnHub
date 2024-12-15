@@ -12,10 +12,16 @@ const otpSession = session({
   cookie: {
     maxAge: 5 * 60 * 1000,
     secure: false,
+    sameSite: "none",
   },
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Frontend domain
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(otpSession);
 
