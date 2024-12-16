@@ -35,6 +35,7 @@ function Home({ handlePopup }) {
   const [doubts, setDoubts] = useState([
     "What is the difference between recursion and iteration? Provide examples . Write a program to reverse a linked list iteratively and recursively.",
     "What are the phases of the Software Development Life Cycle (SDLC)?Explain the Agile methodology and its benefits.What is the difference between white-box and black-box testing?",
+    "What are the phases of the Software Development Life Cycle (SDLC)?Explain the Agile methodology and its benefits.What is the difference between white-box and black-box testing?",
   ]);
   const [newpreference, setNewpreference] = useState("");
   const [bookMark, setBookmark] = useState(false);
@@ -229,7 +230,7 @@ function Home({ handlePopup }) {
               </button>
             </div>
           </div>
-          <div className="flex flex-col  gap-[6rem] h-[100%] w-[60%] justify-center items-center  scrollbar-none">
+          <div className="flex flex-col  gap-[6rem] h-auto w-[60%]  items-center overflow-y-auto scrollbar-none py-[2rem]  hover:bg-[#e1e1e1] hover:rounder-[2rem]">
             {doubts.map((doubt, index) => {
               return (
                 <div
