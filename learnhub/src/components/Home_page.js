@@ -94,11 +94,11 @@ function Home({ handlePopup }) {
   return (
     <>
       <div className="flex flex-col  w-[100%] h-[100%] bg-[#ffffff] overflow-hidden">
-        <div className="flex flex-row gap-[1.5rem] justify-between h-[10%] w-[100%] border-b-[1px] border-[#e1e1e1] overflow-y-none">
+        <div className="flex flex-row gap-[1.5rem] justify-between h-[10%] w-[100%] border-b-[1px] border-[#e1e1e1] overflow-y-none ">
           <div className="flex flex-row gap-[1.5rem] px-[0.75rem] py-[0.25rem] gap-[1rem] justify-center items-center h-[100%] w-[15%]">
             <img
               src="assets\SU.png"
-              className="w-[3rem] h-[3rem] rounded-[1.75rem]"
+              className="w-[28%] h-[95%] rounded-[50%]"
             />
             <p className="font-extrabold font-sans text-[#ED8B00] text-[1.2rem]">
               Learn
@@ -109,11 +109,11 @@ function Home({ handlePopup }) {
           </div>
 
           <div className="flex flex-row justify-center items-center h-[100%] w-[50%] gap-[1.5rem] px-[0.75rem]">
-            <IoSearchOutline className="h-[1.2rem] w-[1.8rem] relative left-[4rem]" />
+            <IoSearchOutline className="h-[40%] w-[5%] relative left-[4rem]" />
             <input
               type="text"
               placeholder="Search"
-              className="h-[55%] w-[70%] border-[1px] border-[#b8b6b6] px-[3.5rem] rounded-[0.1rem] text-[14px] bg-[#f2f2f2] outline-none focus:border-black"
+              className="h-[55%] w-[70%] border-[1px] border-[#b8b6b6] px-[8%]  text-[14px] bg-[#f2f2f2] outline-none focus:border-black"
             />
           </div>
 
@@ -126,12 +126,12 @@ function Home({ handlePopup }) {
             </button>
             <img
               src="assets\profile.png"
-              className="w-[3rem] h-[3rem] rounded-[1.75rem]"
+              className="w-[24%] h-[140%] rounded-[1.75rem]"
             />
           </div>
         </div>
         <div className="w-full h-full flex flex-row">
-          <div className="h-[90%] w-[18%]  border-[#e1e1e1] border-r-[1px] flex flex-col gap-[0rem] justify-center items-center">
+          <div className="h-[90%] w-[18%]  border-[#e1e1e1] border-r-[1px] flex flex-col gap-[0rem] justify-center items-center shadow-lg">
             <div className="flex flex-col h-[40%] w-[100%] gap-[0.6rem] justify-center items-center">
               <button
                 onClick={() => {
@@ -324,19 +324,18 @@ function Home({ handlePopup }) {
               );
             })}
           </div>
-          <div className="w-[28%] h-[100%] bg-[#ffffff] flex flex-row ">
-            <div className="ml-[10%] mt-[25%] w-[90%] h-[45%] bg-[#333333] flex flex-col justify-center items-center gap-[1rem] rounded-l-[3rem] relative overflow-hidden ">
-              {messageicon ? (
-                <AiFillMessage className="w-[1.8rem] h-[2rem] text-white" />
-              ) : (
-                <AiOutlineMessage className="w-[1.8rem] h-[2rem] text-white" />
-              )}
-              <h2 className="font-medium text-white">
-                Discuss and exchange your ideas
+          <div className="w-[28%] h-[100%] bg-[#ffffff] flex flex-row border-l-[1px] border-gray">
+            <div className=" mt-[25%] w-[100%] h-[50%] bg-[#ffffff] flex flex-col justify-center items-center gap-[1rem] rounded-t-l-[1rem] relative overflow-hidden ">
+              <img
+                src="assets\discussing_img2.jpg"
+                className="h-[9rem] w-[12rem]"
+              />
+              <h2 className="font-medium text-[#000000]">
+                Discuss and exchange your ideas !
               </h2>
               <button
                 onClick={handlePopup}
-                className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[1rem]  font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#ffffff]  transition duration-150"
+                className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[1rem]  font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]  transition duration-150"
               >
                 Discuss
               </button>
