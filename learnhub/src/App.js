@@ -3,7 +3,8 @@ import "./App.css";
 import LOGIN_POPUP from "./components/login_popup_card";
 import REGISTER_POPUP from "./components/register_popup_card";
 import Otp_popup from "./components/OTP_popup_card";
-import Home from "./components/Home_page"
+import Home from "./components/Home_page";
+import { gsap } from "gsap";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -11,8 +12,8 @@ function App() {
   const [isLogin, setIslogin] = useState(false);
   const [isOtp, setIsotp] = useState(false);
   const [resend, setResend] = useState(false);
-  const [clickstatus,setClickstatus] = useState(false);
-  
+  const [clickstatus, setClickstatus] = useState(false);
+
   const handlePopup = () => {
     setPopup(true);
     setIslogin(true);
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className="flex flex-col w-full h-screen">
-      <Home handlePopup={handlePopup}/>
+      <Home handlePopup={handlePopup} />
       {popup && (
         <div className="flex flex-col justify-center items-center fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm">
           {isRegister && (
