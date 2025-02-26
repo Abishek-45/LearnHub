@@ -93,63 +93,55 @@ function Home({ handlePopup }) {
   };
   return (
     <>
-      <div className="flex flex-col  w-[100%] h-[100%] bg-[#ffffff] overflow-hidden">
-        <div className="flex flex-row gap-[1.5rem] justify-between h-[10%] w-[100%] border-b-[1px] border-[#e1e1e1] overflow-y-none ">
-          <div className="flex flex-row gap-[1.5rem] px-[0.75rem] py-[0.25rem] gap-[1rem] justify-center items-center h-[100%] w-[15%]">
-            <img
-              src="assets\SU.png"
-              className="w-[28%] h-[95%] rounded-[50%]"
-            />
-            <p className="font-extrabold font-sans text-[#ED8B00] text-[1.2rem]">
+      <div className="flex flex-col w-full h-full bg-gray-100 overflow-hidden">
+        <div className="flex flex-row gap-6 justify-between h-16 w-full border-b border-gray-300 bg-white shadow-md">
+          <div className="flex flex-row gap-6 px-4 py-2 items-center h-full w-1/5">
+            <img src="assets\SU.png" className="w-10 h-10 rounded-full" />
+            <p className="font-extrabold text-orange-600 text-xl">
               Learn
-              <span className="font-extrabold font-sans text-[#000000] text-[1.2rem]">
-                Hub
-              </span>
+              <span className="font-extrabold text-black text-xl">Hub</span>
             </p>
           </div>
 
-          <div className="flex flex-row justify-center items-center h-[100%] w-[50%] gap-[1.5rem] px-[0.75rem]">
-            <IoSearchOutline className="h-[40%] w-[5%] relative left-[4rem]" />
+          <div className="flex flex-row justify-center items-center h-full w-1/2 gap-6 px-4">
+            <IoSearchOutline className="h-6 w-6 relative left-10" />
             <input
               type="text"
               placeholder="Search"
-              className="h-[55%] w-[70%] border-[1px] border-[#b8b6b6] px-[8%]  text-[14px] bg-[#f2f2f2] outline-none focus:border-black"
+              className="h-10 w-3/4 border border-gray-400 px-10 text-sm bg-gray-200 outline-none focus:border-black"
             />
           </div>
 
-          <div className="flex flex-row gap-[1.5rem] px-[0.75rem] py-[0.75rem] gap-[0.90rem] justify-center items-center h-[100%] w-[18%]">
+          <div className="flex flex-row gap-6 px-4 py-2 items-center h-full w-1/5">
             <button
               onClick={handlePopup}
-              className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[5px] font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d] transition duration-150"
+              className="px-6 py-2 bg-gray-800 text-white rounded-md font-bold text-sm hover:bg-white hover:text-gray-800 hover:border hover:border-gray-800 transition duration-150"
             >
               Login
             </button>
-            <img
-              src="assets\profile.png"
-              className="w-[24%] h-[140%] rounded-[1.75rem]"
-            />
+            <img src="assets\profile.png" className="w-10 h-10 rounded-full" />
           </div>
         </div>
         <div className="w-full h-full flex flex-row">
-          <div className="h-[90%] w-[18%]  border-[#e1e1e1] border-r-[1px] flex flex-col gap-[0rem] justify-center items-center shadow-lg">
-            <div className="flex flex-col h-[40%] w-[100%] gap-[0.6rem] justify-center items-center">
+          <div className="h-full w-1/5 border-r border-gray-300 flex flex-col gap-4 justify-center items-center shadow-lg bg-white">
+            <div className="flex flex-col h-1/2 w-full gap-4 justify-center items-center">
               <button
                 onClick={() => {
                   setClickhome(true);
                   setClickaddquestion(false);
                   setClicknotification(false);
                 }}
-                className={`flex flex-row items-center  gap-[1rem] ${
-                  clickHome ? "text-black" : "text-[#585858]"
-                }  text-[13px] h-[2.5rem] w-[12rem] pl-[1.5rem] ${
+                className={`flex flex-row items-center gap-4 ${
+                  clickHome ? "text-black" : "text-gray-600"
+                } text-sm h-10 w-3/4 pl-6 ${
                   clickHome &&
-                  " bg-[#e1e1e1] font-medium rounded-[0.2rem] scale-[1.1] transition duration-300 ease-in-out"
+                  "bg-gray-300 font-medium rounded-md scale-105 transition duration-300 ease-in-out"
                 }`}
               >
                 {clickHome ? (
-                  <GoHomeFill className="h-[1.4rem] w-[1.6rem]" />
+                  <GoHomeFill className="h-6 w-6" />
                 ) : (
-                  <GoHome className="h-[1.4rem] w-[1.6rem]" />
+                  <GoHome className="h-6 w-6" />
                 )}
                 Home
               </button>
@@ -160,14 +152,14 @@ function Home({ handlePopup }) {
                   setClickaddquestion(true);
                   setClicknotification(false);
                 }}
-                className={`flex flex-row items-center  gap-[1rem] ${
-                  clickAddquestion ? "text-black" : "text-[#585858]"
-                }  text-[13px] h-[2.5rem] w-[12rem] pl-[1.5rem] ${
+                className={`flex flex-row items-center gap-4 ${
+                  clickAddquestion ? "text-black" : "text-gray-600"
+                } text-sm h-10 w-3/4 pl-6 ${
                   clickAddquestion &&
-                  "bg-[#e1e1e1] rounded-[0.2rem] font-medium scale-[1.1] transition duration-300"
-                } `}
+                  "bg-gray-300 rounded-md font-medium scale-105 transition duration-300"
+                }`}
               >
-                <BsPencilSquare className="h-[1.4rem] w-[1.6rem]" />
+                <BsPencilSquare className="h-6 w-6" />
                 Add Question
               </button>
 
@@ -177,46 +169,46 @@ function Home({ handlePopup }) {
                   setClickaddquestion(false);
                   setClicknotification(true);
                 }}
-                className={`flex flex-row items-center  gap-[1rem] ${
-                  clickNotification ? "text-black" : "text-[#585858]"
-                } text-[13px] h-[2.5rem] w-[12rem] pl-[1.5rem] ${
+                className={`flex flex-row items-center gap-4 ${
+                  clickNotification ? "text-black" : "text-gray-600"
+                } text-sm h-10 w-3/4 pl-6 ${
                   clickNotification &&
-                  " bg-[#e1e1e1] rounded-[0.2rem] font-medium scale-[1.1] transition duration-300"
+                  "bg-gray-300 rounded-md font-medium scale-105 transition duration-300"
                 }`}
               >
                 {clickNotification ? (
-                  <BsBellFill className="h-[1.4rem] w-[1.6rem]" />
+                  <BsBellFill className="h-6 w-6" />
                 ) : (
-                  <BsBell className="h-[1.4rem] w-[1.6rem]" />
+                  <BsBell className="h-6 w-6" />
                 )}
                 Notification
               </button>
             </div>
-            <hr className="w-[60%] border-t-1 border-gray-400" />
+            <hr className="w-3/4 border-t border-gray-400" />
 
-            <div className="flex flex-col h-[40%] gap-[1.5rem] w-[100%] justify-center items-center ">
-              <div className="flex flex-row pr-auto">
-                <div className="text-[14px] font-medium text-[#585858] flex flex-row pr-[6.5rem] items-center">
-                  <p>Prefernces</p>
+            <div className="flex flex-col h-1/2 gap-6 w-full justify-center items-center">
+              <div className="flex flex-row w-full px-6">
+                <div className="text-sm font-medium text-gray-600 flex flex-row w-full items-center">
+                  <p>Preferences</p>
                 </div>
               </div>
-              <div className="flex flex-row h-[40%] w-[90%] justify-center items-center gap-[0.5rem]">
+              <div className="flex flex-row h-1/2 w-3/4 justify-center items-center gap-2">
                 <FaAngleLeft
                   onClick={handleLeftscroll}
-                  className="cursor-pointer h-[0.8rem]"
+                  className="cursor-pointer h-4"
                 />
                 <div
                   ref={scrollcontainer}
-                  className="h-[100%] w-[80%] flex flex-col flex-wrap items-center gap-[1rem]  overflow-x-auto scrollbar-none "
+                  className="h-full w-3/4 flex flex-col flex-wrap items-center gap-2 overflow-x-auto scrollbar-none"
                 >
                   {preferences.map((pref, index) => (
                     <div
                       key={index}
-                      className="w-auto h-[35%]  px-[0.6rem] justify-center items-center flex flex-row gap-[0.8rem] bg-[#e1e1e1] rounded-[2rem]"
+                      className="w-auto h-8 px-2 justify-center items-center flex flex-row gap-2 bg-gray-300 rounded-full"
                     >
-                      <p className="text-[13px]">{pref}</p>
+                      <p className="text-sm">{pref}</p>
                       <MdCancel
-                        className="cursor-pointer h-[1.2rem] w-[1.2rem]"
+                        className="cursor-pointer h-5 w-5"
                         onClick={() => handleDeletepreference(pref)}
                       />
                     </div>
@@ -224,21 +216,21 @@ function Home({ handlePopup }) {
                 </div>
                 <FaAngleRight
                   onClick={handleRightscroll}
-                  className="cursor-pointer h-[0.8rem]"
+                  className="cursor-pointer h-4"
                 />
               </div>
             </div>
-            <div className="flex flex-col h-[30%] w-[100%] bg-[#333333] justify-center items-center">
+            <div className="flex flex-col h-1/3 w-full bg-gray-800 justify-center items-center">
               <button
                 onClick={() => {
                   setAbout(false);
                   setHelp(true);
                 }}
-                className={`flex flex-row items-center  gap-[1rem] text-white  text-[13px] h-[2.5rem] w-[12rem] pl-[1.5rem] ${
-                  clickHelp && "bg-[#5c5c5c] rounded-[0.5rem]"
-                } `}
+                className={`flex flex-row items-center gap-4 text-white text-sm h-10 w-3/4 pl-6 ${
+                  clickHelp && "bg-gray-600 rounded-md"
+                }`}
               >
-                <HiMiniQuestionMarkCircle className="h-[1.5rem] w-[1.5rem]" />
+                <HiMiniQuestionMarkCircle className="h-6 w-6" />
                 Help
               </button>
               <button
@@ -246,39 +238,39 @@ function Home({ handlePopup }) {
                   setAbout(true);
                   setHelp(false);
                 }}
-                className={`flex flex-row items-center  gap-[1rem] text-white  text-[13px] h-[2.5rem] w-[12rem] pl-[1.5rem] ${
-                  clickAbout && "bg-[#5c5c5c] rounded-[0.5rem]"
-                } `}
+                className={`flex flex-row items-center gap-4 text-white text-sm h-10 w-3/4 pl-6 ${
+                  clickAbout && "bg-gray-600 rounded-md"
+                }`}
               >
-                <IoAlertOutline className="h-[1.6rem] w-[1.6rem] rotate-[180deg]" />
+                <IoAlertOutline className="h-6 w-6 rotate-180" />
                 About us
               </button>
             </div>
           </div>
-          <div className="flex flex-col h-[90%] gap-[0.5rem] w-[60%]  items-center overflow-y-auto scrollbar-none py-[1rem]">
+          <div className="flex flex-col h-full gap-2 w-3/5 items-center overflow-y-auto scrollbar-none py-4">
             {doubts.map((doubt, index) => {
               return (
                 <>
                   <div
                     key={index}
-                    className="h-[20rem] w-[80%] flex flex-col py-[2rem] px-[2.5rem] gap-[1.8rem] hover:bg-[#f2f2f2] hover:rounded-[1rem] transition delay-100 duration-120 ease-in-out"
+                    className="h-80 w-4/5 flex flex-col py-8 px-10 gap-6 bg-white shadow-md hover:bg-gray-100 hover:rounded-lg transition delay-100 duration-120 ease-in-out"
                   >
-                    <div className="h-[30%] w-[100%] flex flex-row justify-between justify-center itmes-center">
-                      <div className="h-[100%] w-[100%] flex flex-row items-center gap-[1rem]">
+                    <div className="h-1/3 w-full flex flex-row justify-between items-center">
+                      <div className="h-full w-full flex flex-row items-center gap-4">
                         <img
                           src={profiles[index]}
-                          className="rounded-[1.5rem] h-[3rem] w-[3rem]"
+                          className="rounded-full h-12 w-12"
                         />
                         <div>
-                          <div className="flex flex-row gap-[0.8rem] items-center">
-                            <p className="text-[15px] font-bold font-sans">
+                          <div className="flex flex-row gap-2 items-center">
+                            <p className="text-base font-bold">
                               {users[index]}
                             </p>
-                            <p className="text-[#2a2eff] text-[13px]">
+                            <p className="text-blue-600 text-sm">
                               {updatetime[index]}
                             </p>
                           </div>
-                          <p className="text-[13px] text-[#585858]">
+                          <p className="text-sm text-gray-600">
                             {department[index]}
                           </p>
                         </div>
@@ -286,56 +278,49 @@ function Home({ handlePopup }) {
                       {bookMark ? (
                         <FaBookmark
                           onClick={handlebookmark}
-                          className="cursor-pointer hover:scale-[1.1] transition delay-100"
+                          className="cursor-pointer hover:scale-110 transition delay-100"
                         />
                       ) : (
                         <FaRegBookmark
                           onClick={handlebookmark}
-                          className="cursor-pointer hover:scale-[1.1] transition delay-100"
+                          className="cursor-pointer hover:scale-110 transition delay-100"
                         />
                       )}
                     </div>
                     <div>
-                      <p className="text-[14px]">{doubts[index]}</p>
+                      <p className="text-sm">{doubt}</p>
                     </div>
-                    <div className="flex flew-row justify-between items-center">
+                    <div className="flex flex-row justify-between items-center">
                       <a
                         href="#_"
-                        class="px-3 text-sm py-2 relative rounded group overflow-hidden font-medium bg-purple-50 text-[#03346E] inline-block border-[1px] border-[#03346E]"
+                        className="px-3 py-2 text-sm relative rounded group overflow-hidden font-medium bg-purple-50 text-blue-900 inline-block border border-blue-900"
                       >
-                        <span class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-[#03346E] group-hover:h-full opacity-90 "></span>
-                        <span class="relative group-hover:text-white flex flex-row gap-[0.5rem] justify-center items-center">
-                          <FaComment className="h-[1.2rem] w-[1.2rem]" />
+                        <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-blue-900 group-hover:h-full opacity-90"></span>
+                        <span className="relative group-hover:text-white flex flex-row gap-2 justify-center items-center">
+                          <FaComment className="h-5 w-5" />
                           Give Solution
                         </span>
                       </a>
-                      <button
-                        className={`flex flex-row items-center justify-center gap-[0.5rem] text-black font-medium  text-[13px] h-[2.5rem] w-[4rem]  
-                       bg-[#cccccc] rounded-[2rem]
-                      `}
-                      >
-                        <MdPersonOutline className="h-[1rem] w-[1rem] " />
+                      <button className="flex flex-row items-center justify-center gap-2 text-black font-medium text-sm h-10 w-16 bg-gray-300 rounded-full">
+                        <MdPersonOutline className="h-4 w-4" />
                         {solutioncount[index]}
                       </button>
                     </div>
                   </div>
-                  <hr className="w-[70%] border-t-1 border-gray-300" />
+                  <hr className="w-3/4 border-t border-gray-300" />
                 </>
               );
             })}
           </div>
-          <div className="w-[28%] h-[100%] bg-[#ffffff] flex flex-row border-l-[1px] border-gray">
-            <div className=" mt-[25%] w-[100%] h-[50%] bg-[#ffffff] flex flex-col justify-center items-center gap-[1rem] rounded-t-l-[1rem] relative overflow-hidden ">
-              <img
-                src="assets\discussing_img2.jpg"
-                className="h-[9rem] w-[12rem]"
-              />
-              <h2 className="font-medium text-[#000000]">
-                Discuss and exchange your ideas !
+          <div className="w-1/4 h-full bg-white flex flex-col border-l border-gray-300">
+            <div className="mt-32 w-full h-1/2 bg-white flex flex-col justify-center items-center gap-4 rounded-t-lg relative overflow-hidden shadow-md">
+              <img src="assets\discussing_img2.jpg" className="h-36 w-48" />
+              <h2 className="font-medium text-black">
+                Discuss and exchange your ideas!
               </h2>
               <button
                 onClick={handlePopup}
-                className="mx-[2.5px] my-[2.5px] px-[30px] py-[5px] bg-[#4d4d4d] border-[0.5px] text-white rounded-[1rem]  font-bold text-[15px] hover:bg-[#ffffff] hover:text-[#4d4d4d] hover:border-[0.5px] hover:border-[#4d4d4d]  transition duration-150"
+                className="px-6 py-2 bg-gray-800 text-white rounded-md font-bold text-sm hover:bg-white hover:text-gray-800 hover:border hover:border-gray-800 transition duration-150"
               >
                 Discuss
               </button>
